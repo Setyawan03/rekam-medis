@@ -36,6 +36,43 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->group('dokter', static function ($routes) {
+    $routes->get('', 'Admin\Dokter::index');
+    $routes->get('add', 'Admin\Dokter::tambah');
+    $routes->get('edit', 'Admin\Dokter::ubah');
+    $routes->get('deleted', 'Admin\Dokter::hapus');
+});
+$routes->group('pasien', static function ($routes) {
+    $routes->get('', 'Admin\Pasien::index');
+    $routes->get('add', 'Admin\Pasien::tambah');
+    $routes->get('edit', 'Admin\Pasien::ubah');
+    $routes->get('deleted', 'Admin\Pasien::hapus');
+});
+$routes->group('petugas_medis', static function ($routes) {
+    $routes->get('', 'Admin\Petugas_Medis::index');
+    $routes->get('add', 'Admin\Petugas_Medis::tambah');
+    $routes->get('edit', 'Admin\Petugas_Medis::ubah');
+    $routes->get('deleted', 'Admin\Petugas_Medis::hapus');
+});
+$routes->group('poli', static function ($routes) {
+    $routes->get('', 'Admin\Poli::index');
+    $routes->get('add', 'Admin\Poli::tambah');
+    $routes->get('edit', 'Admin\Poli::ubah');
+    $routes->get('deleted', 'Admin\Poli::hapus');
+});
+$routes->group('rekam_medis', static function ($routes) {
+    $routes->get('', 'Dokter\Rekam_Medis::index');
+    $routes->get('add', 'Dokter\Rekam_Medis::tambah');
+    $routes->get('edit', 'Dokter\Rekam_Medis::ubah');
+    $routes->get('deleted', 'Dokter\Rekam_Medis::hapus');
+});
+$routes->group('rekam_medis', static function ($routes) {
+    $routes->get('', 'Petugas\Rekam_Medis::index');
+    $routes->get('add', 'Petugas\Rekam_Medis::tambah');
+    $routes->get('edit', 'Petugas\Rekam_Medis::ubah');
+    $routes->get('deleted', 'Petugas\Rekam_Medis::hapus');
+});
+
 
 /*
  * --------------------------------------------------------------------
