@@ -8,21 +8,21 @@ class Dokter extends BaseController
 {
     public function index()
     {
-        return view('petugas_medis/Menu_Petugas_Medis');
+        return view('dokter/index');
     }
 
     public function tambah()
     {
-        # code...
+        return view('dokter/tambah');
     }
 
     public function ubah()
     {
-        # code...
+        return view('dokter/ubah');
     }
 
     public function hapus()
     {
-        # code...
+        return view('dokter/hapus');
     }
 }

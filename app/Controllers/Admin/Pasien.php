@@ -8,21 +8,21 @@ class Pasien extends BaseController
 {
     public function index()
     {
-        return view('pasien/Menu_Pasien');
+        return view('pasien/index');
     }
 
     public function tambah()
     {
-        # code...
+        return view('pasien/tambah');
     }
 
     public function ubah()
     {
-        # code...
+        return view('pasien/ubah');
     }
 
     public function hapus()
     {
-        # code...
+        return view('pasien/hapus');
     }
 }

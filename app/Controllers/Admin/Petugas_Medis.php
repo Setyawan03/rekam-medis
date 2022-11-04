@@ -8,21 +8,21 @@ class Petugas_Medis extends BaseController
 {
     public function index()
     {
-        return view('petugas_medis/Menu_Petugas_Medis');
+        return view('petugas_medis/index');
     }
 
     public function tambah()
     {
-        # code...
+        return view('petugas_medis/tambah');
     }
 
     public function ubah()
     {
-        # code...
+        return view('petugas_medis/ubah');
     }
 
     public function hapus()
     {
-        # code...
+        return view('petugas_medis/hapus');
     }
 }
