@@ -8,11 +8,12 @@
     <div class="card-body">
         <table class="table table-bordered">
             <thead>
-                <tr>
+                <tr align="middle">
                     <th>No</th>
                     <th>Nama Petugas</th>
                     <th>Alamat</th>
                     <th>No Handphone</th>
+                    <th>Jabatan</th>
                 </tr>
             </thead>
         </table>

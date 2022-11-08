@@ -8,11 +8,12 @@
     <div class="card-body">
         <table class="table table-bordered">
             <thead>
-                <tr align=middle>
+                <tr align="middle">
                     <th>No</th>
                     <th>Nama Dokter</th>
                     <th>Alamat</th>
-                    <th>No Handphone</th>
+                    <th>Spesialis</th>
+                    <th>Jadwal</th>
                 </tr>
             </thead>
         </table>
