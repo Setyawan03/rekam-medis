@@ -45,8 +45,9 @@ $routes->group('dokter', static function ($routes) {
 $routes->group('pasien', static function ($routes) {
     $routes->get('', 'Admin\Pasien::index');
     $routes->get('add', 'Admin\Pasien::tambah');
+    $routes->post('add', 'Admin\Pasien::tambah');
     $routes->get('edit', 'Admin\Pasien::ubah');
-    $routes->get('deleted', 'Admin\Pasien::hapus');
+    $routes->get('deleted/(:any)', 'Admin\Pasien::hapus/$1');
 });
 $routes->group('petugas_medis', static function ($routes) {
     $routes->get('', 'Admin\Petugas_Medis::index');

@@ -12,11 +12,23 @@
                     <th>No</th>
                     <th>Nama Pasien</th>
                     <th>Alamat</th>
-                    <th>Tanggal Lahir</th>
+                    <th>Tempat Tanggal Lahir</th>
                     <th>No Handphone</th>
-                    <th>Keluhan</th>
+                    <th>Action</th>
                 </tr>
             </thead>
+            <tbody>
+                <?php foreach ($pasiens as $key => $pasien) : ?>
+                    <tr>
+                        <td><?= $key + 1 ?></td>
+                        <td><?= $pasien['nama_pasien'] ?></td>
+                        <td><?= $pasien['alamat'] ?></td>
+                        <td><?= $pasien['tmpt_lahir'] . ', ' . $pasien['tgl_lahir'] ?></td>
+                        <td><?= $pasien['no_hp'] ?></td>
+                        <td><a href="<?= base_url('pasien/deleted') . "/" . $pasien['id'] ?>"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
     </div>
 </div>
