@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class PoliModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'polis';
+    protected $table            = 'poli';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
