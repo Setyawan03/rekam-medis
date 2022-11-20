@@ -17,7 +17,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Auth');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -35,12 +35,16 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Auth::index');
+$routes->get('home', 'Home::index');
+$routes->post('login', 'Auth::login');
+$routes->get('logout', 'Auth::logout');
 $routes->group('dokter', static function ($routes) {
     $routes->get('', 'Admin\Dokter::index');
     $routes->get('add', 'Admin\Dokter::tambah');
+    $routes->post('add', 'Admin\Dokter::tambah');
     $routes->get('edit', 'Admin\Dokter::ubah');
-    $routes->get('deleted', 'Admin\Dokter::hapus');
+    $routes->get('deleted/(:any)', 'Admin\Dokter::hapus/$1');
 });
 $routes->group('pasien', static function ($routes) {
     $routes->get('', 'Admin\Pasien::index');
@@ -52,26 +56,30 @@ $routes->group('pasien', static function ($routes) {
 $routes->group('petugas_medis', static function ($routes) {
     $routes->get('', 'Admin\Petugas_Medis::index');
     $routes->get('add', 'Admin\Petugas_Medis::tambah');
+    $routes->post('add', 'Admin\Petugas_Medis::tambah');
     $routes->get('edit', 'Admin\Petugas_Medis::ubah');
-    $routes->get('deleted', 'Admin\Petugas_Medis::hapus');
+    $routes->get('deleted/(:any)', 'Admin\Petugas_Medis::hapus/$1');
 });
 $routes->group('poli', static function ($routes) {
     $routes->get('', 'Admin\Poli::index');
     $routes->get('add', 'Admin\Poli::tambah');
+    $routes->post('add', 'Admin\Poli::tambah');
     $routes->get('edit', 'Admin\Poli::ubah');
-    $routes->get('deleted', 'Admin\Poli::hapus');
+    $routes->get('deleted/(:any)', 'Admin\Poli::hapus/$1');
 });
 $routes->group('rekam_medis', static function ($routes) {
     $routes->get('', 'Dokter\Rekam_Medis::index');
     $routes->get('add', 'Dokter\Rekam_Medis::tambah');
+    $routes->post('add', 'Dokter\Rekam_Medis::tambah');
     $routes->get('edit', 'Dokter\Rekam_Medis::ubah');
-    $routes->get('deleted', 'Dokter\Rekam_Medis::hapus');
+    $routes->get('deleted/(:any)', 'Dokter\Rekam_Medis::hapus/$1');
 });
 $routes->group('rekam_medis', static function ($routes) {
     $routes->get('', 'Petugas\Rekam_Medis::index');
     $routes->get('add', 'Petugas\Rekam_Medis::tambah');
+    $routes->post('add', 'Petugas\Rekam_Medis::tambah');
     $routes->get('edit', 'Petugas\Rekam_Medis::ubah');
-    $routes->get('deleted', 'Petugas\Rekam_Medis::hapus');
+    $routes->get('deleted/(:any)', 'Petugas\Rekam_Medis::hapus/$1');
 });
 
 

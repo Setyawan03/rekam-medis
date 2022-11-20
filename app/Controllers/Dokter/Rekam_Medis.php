@@ -1,19 +1,32 @@
 <?php
 
-namespace App\Controllers\Dokter;
+namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\PoliModel;
 
-class Rekam_Medis extends BaseController
+class Poli extends BaseController
 {
+    public function __construct()
+    {
+        $this->poli = new PoliModel();
+    }
     public function index()
     {
-        return view('petugas_medis/Menu_Petugas_Medis');
+        $data['polis'] = $this->poli->findAll();
+        return view('poli/index', $data);
     }
+
 
     public function tambah()
     {
-        # code...
+        $data = $this->request->getPost();
+        if (count($data) > 0) {
+            $this->poli->insert($data);
+            return redirect()->to('poli');
+        } else {
+            return view('poli/tambah');
+        }
     }
 
     public function ubah()
@@ -21,8 +34,9 @@ class Rekam_Medis extends BaseController
         # code...
     }
 
-    public function hapus()
+    public function hapus($id)
     {
-        # code...
+        $this->poli->delete($id);
+        return redirect()->to('rekam_medis');
     }
 }

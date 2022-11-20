@@ -185,7 +185,7 @@
             <img src="<?= base_url() ?>/dist/img/lisa.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">MEYLISA</a>
+            <a href="#" class="d-block"><?= session()->get('nama') . " | " . session()->get('poli') ?></a>
           </div>
         </div>
 
@@ -214,7 +214,7 @@
                 </p>
               </a>
             <li class="nav-item">
-              <a href="<?= base_url('pasien') ?>" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                   Pasien
@@ -238,12 +238,6 @@
                   <a href="<?= base_url('pasien/edit') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Ubah</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('pasien/deleted') ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Hapus</p>
                   </a>
                 </li>
               </ul>
@@ -275,16 +269,11 @@
                     <p>Ubah</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('dokter/deleted') ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Hapus</p>
-                  </a>
-                </li>
               </ul>
             </li>
+
             <li class="nav-item">
-              <a href="<?= base_url('petugas_medis') ?>" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                   Petugas Medis
@@ -310,13 +299,15 @@
                     <p>Ubah</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('petugas_medis/deleted') ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Hapus</p>
-                  </a>
-                </li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('logout') ?>" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                  Logout
+                </p>
+              </a>
             </li>
           </ul>
         </nav>
@@ -382,35 +373,35 @@
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/jquery/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/jquery-ui/jquery-ui.min.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
     $.widget.bridge('uibutton', $.ui.button)
   </script>
   <!-- Bootstrap 4 -->
-  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- ChartJS -->
-  <script src="plugins/chart.js/Chart.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/chart.js/Chart.min.js"></script>
   <!-- Sparkline -->
-  <script src="plugins/sparklines/sparkline.js"></script>
+  <script src="<?= base_url() ?>/plugins/sparklines/sparkline.js"></script>
   <!-- JQVMap -->
-  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <script src="<?= base_url() ?>/plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
   <!-- jQuery Knob Chart -->
-  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/jquery-knob/jquery.knob.min.js"></script>
   <!-- daterangepicker -->
-  <script src="plugins/moment/moment.min.js"></script>
-  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="<?= base_url() ?>/plugins/moment/moment.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/daterangepicker/daterangepicker.js"></script>
   <!-- Tempusdominus Bootstrap 4 -->
-  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
   <!-- Summernote -->
-  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/summernote/summernote-bs4.min.js"></script>
   <!-- overlayScrollbars -->
-  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="dist/js/adminlte.js"></script>
+  <script src="<?= base_url() ?>/dist/js/adminlte.js"></script>
   <!-- AdminLTE for demo purposes -->
   <!-- <script src="dist/js/demo.js"></script> -->
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

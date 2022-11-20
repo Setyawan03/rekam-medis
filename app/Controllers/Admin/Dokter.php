@@ -3,17 +3,29 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\DokterModel;
 
 class Dokter extends BaseController
 {
+    public function __construct()
+    {
+        $this->dokter = new DokterModel();
+    }
     public function index()
     {
-        return view('dokter/index');
+        $data['dokters'] = $this->dokter->findAll();
+        return view('dokter/index', $data);
     }
 
     public function tambah()
     {
-        return view('dokter/tambah');
+        $data = $this->request->getPost();
+        if (count($data) > 0) {
+            $this->dokter->insert($data);
+            return redirect()->to('dokter');
+        } else {
+            return view('dokter/tambah');
+        }
     }
 
     public function ubah()
@@ -21,8 +33,9 @@ class Dokter extends BaseController
         return view('dokter/ubah');
     }
 
-    public function hapus()
+    public function hapus($id = null)
     {
-        return view('dokter/hapus');
+        $this->dokter->delete($id);
+        return redirect()->to('dokter');
     }
 }

@@ -15,6 +15,7 @@
                     <th>Tanggal Lahir</th>
                     <th>No Handphone</th>
                     <th>Keluhan</th>
+                    <th>Action</th>
                 </tr>
             </thead>
         </table>

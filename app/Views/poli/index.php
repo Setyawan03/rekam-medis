@@ -9,7 +9,9 @@
         <table class="table table-bordered">
             <thead>
                 <tr align="middle">
+                    <th>No</th>
                     <th>Nama Poli</th>
+                    <th>Action</th>
                 </tr>
             </thead>
         </table>

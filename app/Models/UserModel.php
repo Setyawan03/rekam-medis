@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class User extends Model
+class UserModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'user';
@@ -39,4 +39,14 @@ class User extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getData($role, $id)
+    {
+        $data = $this->db->query("SELECT petugas_medis.nama AS nama, poli.nama_poli AS poli, poli.id AS poli_id
+        FROM user
+        LEFT JOIN petugas_medis ON user.id = petugas_medis.id_user
+        LEFT JOIN poli ON petugas_medis.id_poli = poli.id
+        WHERE user.id = '$id'")->getResultArray();
+        return $data[0];
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Controllers\Petugas;
 
 use App\Controllers\BaseController;
+use App\Models\PasienModel;
 
 class Rekam_Medis extends BaseController
 {

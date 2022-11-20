@@ -12,8 +12,10 @@
                     <th>No</th>
                     <th>Nama Petugas</th>
                     <th>Alamat</th>
+                    <th>Jenis Kelamin</th>
                     <th>No Handphone</th>
                     <th>Jabatan</th>
+                    <th>Action</th>
                 </tr>
             </thead>
         </table>

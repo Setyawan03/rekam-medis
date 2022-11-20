@@ -20,7 +20,7 @@
             <tbody>
                 <?php foreach ($pasiens as $key => $pasien) : ?>
                     <tr>
-                        <td><?= $key + 1 ?></td>
+                        <td align="middle"><?= $key + 1 ?></td>
                         <td><?= $pasien['nama_pasien'] ?></td>
                         <td><?= $pasien['alamat'] ?></td>
                         <td><?= $pasien['tmpt_lahir'] . ', ' . $pasien['tgl_lahir'] ?></td>
