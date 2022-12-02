@@ -7,14 +7,14 @@ use CodeIgniter\Model;
 class PetugasMedisModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'petugasmedis';
+    protected $table            = 'petugas_medis';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'alamat', 'jenis_kelamin', 'no_hp', 'jabatan'];
+    protected $allowedFields    = ['user_id', 'poli_id', 'nama', 'alamat', 'jenis_kelamin', 'no_hp', 'jabatan'];
 
     // Dates
     protected $useTimestamps = false;

@@ -31,18 +31,36 @@
                 <input type="text" name="no_hp" class="form-control" placeholder="Input Nomor HP">
             </div>
             <div class="form-group">
-                <label for="">Alamat</label>
-                <textarea name="alamat" rows="5" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
                 <label for="">Poli</label>
-                <select name="id_poli" class="form-control">
+                <select name="poli_id" class="form-control">
                     <option value=""></option>
                     <?php foreach ($polis as $key => $poli) : ?>
                         <option value="<?= $poli['id'] ?>"><?= $poli['nama_poli'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="">Alamat</label>
+                <textarea name="alamat" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="">User Akses</label>
+                <select name="role" id="" class="form-control">
+                    <option value="">---Pilih User Akses---</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Perawat">Perawat</option>
+                    <option value="Dokter">Dokter</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Simpan">
             </div>

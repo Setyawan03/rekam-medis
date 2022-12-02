@@ -42,10 +42,10 @@ class UserModel extends Model
 
     public function getData($role, $id)
     {
-        $data = $this->db->query("SELECT petugas_medis.nama AS nama, poli.nama_poli AS poli, poli.id AS poli_id
+        $data = $this->db->query("SELECT petugas_medis.nama AS nama, poli.nama_poli AS poli, poli.id AS poli_id, user.role
         FROM user
-        LEFT JOIN petugas_medis ON user.id = petugas_medis.id_user
-        LEFT JOIN poli ON petugas_medis.id_poli = poli.id
+        LEFT JOIN petugas_medis ON user.id = petugas_medis.user_id
+        LEFT JOIN poli ON petugas_medis.poli_id = poli.id
         WHERE user.id = '$id'")->getResultArray();
         return $data[0];
     }

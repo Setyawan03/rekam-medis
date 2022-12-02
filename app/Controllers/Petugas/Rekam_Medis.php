@@ -3,18 +3,30 @@
 namespace App\Controllers\Petugas;
 
 use App\Controllers\BaseController;
-use App\Models\PasienModel;
+use App\Models\RekamMedisModel;
 
-class Rekam_Medis extends BaseController
+class Poli extends BaseController
 {
+    public function __construct()
+    {
+        $this->rekam_medis = new RekamMedisModel();
+    }
     public function index()
     {
-        return view('petugas_medis/Menu_Petugas_Medis');
+        $data['rekam_mediss'] = $this->poli->findAll();
+        return view('rekam_medis/index', $data);
     }
+
 
     public function tambah()
     {
-        # code...
+        $data = $this->request->getPost();
+        if (count($data) > 0) {
+            $this->rekam_medis->insert($data);
+            return redirect()->to('rekam_medis');
+        } else {
+            return view('rekammedis/tambah');
+        }
     }
 
     public function ubah()
@@ -22,8 +34,9 @@ class Rekam_Medis extends BaseController
         # code...
     }
 
-    public function hapus()
+    public function hapus($id)
     {
-        # code...
+        $this->poli->delete($id);
+        return redirect()->to('rekam_medis');
     }
 }

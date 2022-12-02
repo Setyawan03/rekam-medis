@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace App\Controllers\Dokter;
 
 use App\Controllers\BaseController;
-use App\Models\PoliModel;
+use App\Models\RekamMedisModel;
 
 class Poli extends BaseController
 {
     public function __construct()
     {
-        $this->poli = new PoliModel();
+        $this->rekam_medis = new RekamMedisModel();
     }
     public function index()
     {
-        $data['polis'] = $this->poli->findAll();
-        return view('poli/index', $data);
+        $data['rekam_mediss'] = $this->poli->findAll();
+        return view('rekam_medis/index', $data);
     }
 
 
@@ -22,10 +22,10 @@ class Poli extends BaseController
     {
         $data = $this->request->getPost();
         if (count($data) > 0) {
-            $this->poli->insert($data);
-            return redirect()->to('poli');
+            $this->rekam_medis->insert($data);
+            return redirect()->to('rekam_medis');
         } else {
-            return view('poli/tambah');
+            return view('rekammedis/tambah');
         }
     }
 
