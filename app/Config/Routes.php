@@ -39,13 +39,6 @@ $routes->get('/', 'Auth::index');
 $routes->get('home', 'Home::index');
 $routes->post('login', 'Auth::login');
 $routes->get('logout', 'Auth::logout');
-$routes->group('dokter', static function ($routes) {
-    $routes->get('', 'Admin\Dokter::index');
-    $routes->get('add', 'Admin\Dokter::tambah');
-    $routes->post('add', 'Admin\Dokter::tambah');
-    $routes->get('edit', 'Admin\Dokter::ubah');
-    $routes->get('deleted/(:any)', 'Admin\Dokter::hapus/$1');
-});
 $routes->group('pasien', static function ($routes) {
     $routes->get('', 'Admin\Pasien::index');
     $routes->get('add', 'Admin\Pasien::tambah');

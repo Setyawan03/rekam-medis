@@ -235,44 +235,31 @@
                       <p>Tambah</p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="<?= base_url('pasien/edit') ?>" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Ubah</p>
-                    </a>
-                  </li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
-                    Dokter
+                    Poli
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?= base_url('dokter') ?>" class="nav-link">
+                    <a href="<?= base_url('poli') ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Daftar Dokter</p>
+                      <p>Daftar Poli</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('dokter/add') ?>" class="nav-link">
+                    <a href="<?= base_url('poli/add') ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Tambah</p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="<?= base_url('dokter/edit') ?>" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Ubah</p>
-                    </a>
-                  </li>
                 </ul>
               </li>
-
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
@@ -294,10 +281,27 @@
                       <p>Tambah</p>
                     </a>
                   </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Rekam Medis
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?= base_url('petugas_medis/edit') ?>" class="nav-link">
+                    <a href="<?= base_url('rekammedis') ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Ubah</p>
+                      <p>Daftar Rekam Medis</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('rekammedis/add') ?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Tambah</p>
                     </a>
                   </li>
                 </ul>
