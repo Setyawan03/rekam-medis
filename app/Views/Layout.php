@@ -313,19 +313,58 @@
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Rekam Medis
+                    <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
-              </li>
-            <?php endif ?>
-            <li class="nav-item">
-              <a href="<?= base_url('logout') ?>" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                  Logout
-                </p>
-              </a>
-            </li>
-          </ul>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?= base_url('rekammedis') ?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Daftar Rekam Medis</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('rekammedis/add') ?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Tambah</p>
+                    </a>
+                  </li>
+                <?php endif ?>
+                <?php if (session()->get('role') == 'Dokter') : ?>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-th"></i>
+                      <p>
+                        Rekam Medis
+                        <i class="fas fa-angle-left right"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="<?= base_url('rekammedis') ?>" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Daftar Rekam Medis</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="<?= base_url('rekammedis/add') ?>" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Tambah</p>
+                        </a>
+                      </li>
+                      </p>
+                      </a>
+                  </li>
+                <?php endif ?>
+                <li class="nav-item">
+                  <a href="<?= base_url('logout') ?>" class="nav-link">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                      Logout
+                    </p>
+                  </a>
+                </li>
+                </ul>
         </nav>
         <!-- /.sidebar-menu -->
       </div>

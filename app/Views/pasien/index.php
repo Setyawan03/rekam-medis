@@ -10,7 +10,9 @@
             <thead>
                 <tr align="middle">
                     <th>No</th>
+                    <th>No Kartu</th>
                     <th>Nama Pasien</th>
+                    <th>Jenis Kelamin</th>
                     <th>Alamat</th>
                     <th>Tempat Tanggal Lahir</th>
                     <th>No Handphone</th>
@@ -21,7 +23,9 @@
                 <?php foreach ($pasiens as $key => $pasien) : ?>
                     <tr>
                         <td align="middle"><?= $key + 1 ?></td>
+                        <td><?= $pasien['no_pasien'] ?></td>
                         <td><?= $pasien['nama_pasien'] ?></td>
+                        <td><?= $pasien['jenis_kelamin'] ?></td>
                         <td><?= $pasien['alamat'] ?></td>
                         <td><?= $pasien['tmpt_lahir'] . ', ' . $pasien['tgl_lahir'] ?></td>
                         <td><?= $pasien['no_hp'] ?></td>

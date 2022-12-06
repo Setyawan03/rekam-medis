@@ -8,6 +8,10 @@
     <div class="card-body">
         <form action="<?= base_url('pasien/add') ?>" method="POST">
             <div class="form-group">
+                <label for="">Nama Pasien</label>
+                <input type="text" name="nama" class="form-control" placeholder="Input Nama Pasien">
+            </div>
+            <div class="form-group">
                 <label for="">Tanggal Berobat</label>
                 <input type="date" name="tgl_lahir" class="form-control" placeholder="Input Tempat Lahir">
             </div>

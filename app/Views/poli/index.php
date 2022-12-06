@@ -14,6 +14,14 @@
                     <th>Action</th>
                 </tr>
             </thead>
+            <tbody>
+                <?php foreach ($polis as $index => $poli) : ?>
+                    <tr>
+                        <td><?= $index + 1 ?></td>
+                        <td><?= $poli['nama_poli'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
     </div>
 </div>

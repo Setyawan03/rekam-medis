@@ -10,12 +10,13 @@
             <thead>
                 <tr align="middle">
                     <th>No</th>
+                    <th>Id User</th>
+                    <th>Id Poli</th>
                     <th>Nama Petugas</th>
                     <th>Alamat</th>
                     <th>Jenis Kelamin</th>
                     <th>No Handphone</th>
                     <th>Jabatan</th>
-                    <th>Poli</th>
                     <th>Username</th>
                     <th>User Akses</th>
                     <th>Action</th>
@@ -25,6 +26,8 @@
                 <?php foreach ($petugas_medis as $index => $petugas) : ?>
                     <tr>
                         <td><?= $index + 1 ?></td>
+                        <td><?= $petugas['user_id'] ?></td>
+                        <td><?= $petugas['poli_id'] ?></td>
                         <td><?= $petugas['nama'] ?></td>
                         <td><?= $petugas['alamat'] ?></td>
                         <td><?= $petugas['jenis_kelamin'] ?></td>
