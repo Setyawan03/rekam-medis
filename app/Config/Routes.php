@@ -67,7 +67,7 @@ $routes->group('poli', static function ($routes) {
     $routes->get('edit', 'Admin\Rekam_Medis::ubah');
     $routes->get('deleted/(:any)', 'Admin\Rekam_Medis::hapus/$1');
 });
-$routes->group('rekammedis', static function ($routes) {
+$routes->group('diagnosa', static function ($routes) {
     $routes->get('', 'Dokter\Rekam_Medis::index');
     $routes->get('add', 'Dokter\Rekam_Medis::tambah');
     $routes->post('add', 'Dokter\Rekam_Medis::tambah');

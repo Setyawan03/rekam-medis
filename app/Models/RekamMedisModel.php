@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class RekamMedisModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'rekammedis';
+    protected $table            = 'rekam_medis';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;

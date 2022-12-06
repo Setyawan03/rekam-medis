@@ -6,7 +6,7 @@
         <h3>Tambah Poli</h3>
     </div>
     <div class="card-body">
-        <form action="<?= base_url('pasien/add') ?>" method="POST">
+        <form action="<?= base_url('poli/add') ?>" method="POST">
             <div class="form-group">
                 <label for="">Nama Poli</label>
                 <input type="text" name="nama_poli" class="form-control" placeholder="Input Nama Poli">

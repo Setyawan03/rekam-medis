@@ -13,8 +13,8 @@ class Rekam_Medis extends BaseController
     }
     public function index()
     {
-        $data['rekam_mediss'] = $this->rekam_medis->findAll();
-        return view('rekam_medis/index', $data);
+        $data['rekammedis'] = $this->rekam_medis->findAll();
+        return view('rekammedis/index', $data);
     }
 
 
@@ -23,9 +23,9 @@ class Rekam_Medis extends BaseController
         $data = $this->request->getPost();
         if (count($data) > 0) {
             $this->rekam_medis->insert($data);
-            return redirect()->to('rekam_medis');
+            return redirect()->to('rekammedis');
         } else {
-            return view('rekam_medis/tambah');
+            return view('rekammedis/tambah');
         }
     }
 

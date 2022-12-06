@@ -14,7 +14,7 @@ class Rekam_Medis extends BaseController
     public function index()
     {
         $data['rekam_mediss'] = $this->rekam_medis->findAll();
-        return view('rekam_medis/index', $data);
+        return view('rekammedis/index', $data);
     }
 
 

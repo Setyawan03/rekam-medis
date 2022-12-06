@@ -5,7 +5,7 @@ namespace App\Controllers\Petugas;
 use App\Controllers\BaseController;
 use App\Models\RekamMedisModel;
 
-class Poli extends BaseController
+class Rekam_Medis extends BaseController
 {
     public function __construct()
     {
@@ -13,8 +13,8 @@ class Poli extends BaseController
     }
     public function index()
     {
-        $data['rekam_mediss'] = $this->poli->findAll();
-        return view('rekam_medis/index', $data);
+        $data['rekammedis'] = $this->rekam_medis->findAll();
+        return view('rekammedis/index', $data);
     }
 
 
@@ -23,7 +23,7 @@ class Poli extends BaseController
         $data = $this->request->getPost();
         if (count($data) > 0) {
             $this->rekam_medis->insert($data);
-            return redirect()->to('rekam_medis');
+            return redirect()->to('rekammedis');
         } else {
             return view('rekammedis/tambah');
         }

@@ -341,13 +341,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="<?= base_url('rekammedis') ?>" class="nav-link">
+                        <a href="<?= base_url('diagnosa') ?>" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Daftar Rekam Medis</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="<?= base_url('rekammedis/add') ?>" class="nav-link">
+                        <a href="<?= base_url('diagnosa/add') ?>" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Tambah</p>
                         </a>

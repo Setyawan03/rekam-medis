@@ -21,6 +21,7 @@ class Poli extends BaseController
     public function tambah()
     {
         $data = $this->request->getPost();
+
         if (count($data) > 0) {
             $this->poli->insert($data);
             return redirect()->to('poli');
