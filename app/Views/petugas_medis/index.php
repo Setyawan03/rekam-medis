@@ -36,7 +36,10 @@
                         <td><?= $petugas['nama_poli'] ?></td>
                         <td><?= $petugas['username'] ?></td>
                         <td><?= $petugas['role'] ?></td>
-                        <td></td>
+                        <td>
+                            <a href="<?= base_url('petugas_medis/deleted') . "/" . $petugas['id'] ?>"><i class="fas fa-trash"></i></a>
+                            <a href="<?= base_url('petugas_medis/edit') . "/" . $petugas['id'] ?>"><i class="fas fa-edit"></i></a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

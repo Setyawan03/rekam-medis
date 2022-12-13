@@ -14,10 +14,11 @@
                     <th>Id Poli</th>
                     <th>Nama Pasien</th>
                     <th>Alamat</th>
-                    <th>Tanggal Periksa</th>
+                    <th>Tanggal Berobat</th>
                     <th>Keluhan</th>
                     <th>Diagnosa</th>
                     <th>Resep</th>
+                    <th>Nama Dokter</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -33,9 +34,11 @@
                         <td><?= $rekammedis['alamat'] ?></td>
                         <td><?= $rekammedis['diagnosa'] ?></td>
                         <td><?= $rekammedis['resep'] ?></td>
-                        <td><?= $rekammedis['username'] ?></td>
-                        <td><?= $rekammedis['role'] ?></td>
-                        <td></td>
+                        <td><?= $rekammedis['nama_dokter'] ?></td>
+                        <td>
+                            <a href="<?= base_url('rekammedis/deleted') . "/" . $rekammedis['id'] ?>"><i class="fas fa-trash"></i></a>
+                            <a href="<?= base_url('rekammedis/edit') . "/" . $rekammedis['id'] ?>"><i class="fas fa-edit"></i></a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

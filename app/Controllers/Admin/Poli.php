@@ -30,9 +30,21 @@ class Poli extends BaseController
         }
     }
 
-    public function ubah()
+    public function ubah($id)
     {
-        # code...
+        $data = [
+            'polis' => $this->poli->find($id)
+        ];
+        return view('poli/ubah', $data);
+    }
+    public function update($id)
+    {
+        $data = [
+            'id' => $id,
+            'nama_poli' => $this->request->getPost('nama_poli'),
+        ];
+        $this->poli->save($data);
+        return redirect()->to('/poli');
     }
 
     public function hapus($id)

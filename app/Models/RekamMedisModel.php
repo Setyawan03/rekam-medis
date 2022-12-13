@@ -14,7 +14,7 @@ class RekamMedisModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['pasien_id', 'dokter_id', 'poli_id', 'nama', 'alamat', 'tanggal', 'diagnosa', 'resep', 'keluhan'];
+    protected $allowedFields    = ['pasien_id', 'poli_id', 'nama', 'nama_dokter', 'alamat', 'tanggal', 'diagnosa', 'resep', 'keluhan'];
 
     // Dates
     protected $useTimestamps = false;

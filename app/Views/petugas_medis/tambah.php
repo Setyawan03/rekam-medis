@@ -9,7 +9,7 @@
         <form action="<?= base_url('petugas_medis/add') ?>" method="POST">
             <div class="form-group">
                 <label for="">Nama Petugas</label>
-                <input type="text" name="nama" class="form-control" placeholder="Input Nama Petugas">
+                <input type="text" name="nama" class="form-control" placeholder="Input Nama Petugas" required>
             </div>
             <div class="form-group">
                 <label for="">Jabatan</label>
@@ -45,11 +45,11 @@
             </div>
             <div class="form-group">
                 <label for="">Username</label>
-                <input type="text" class="form-control" name="username" placeholder="Username">
+                <input type="text" class="form-control" name="username" placeholder="Username" required>
             </div>
             <div class="form-group">
                 <label for="">Password</label>
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
             </div>
             <div class="form-group">
                 <label for="">User Akses</label>
@@ -60,7 +60,6 @@
                     <option value="Dokter">Dokter</option>
                 </select>
             </div>
-
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Simpan">
             </div>

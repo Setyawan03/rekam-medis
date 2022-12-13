@@ -12,6 +12,7 @@ class Petugas_Medis extends BaseController
     public function __construct()
     {
         $this->petugas_medis = new PetugasMedisModel();
+        $this->poli = new PoliModel();
     }
     public function index()
     {
@@ -46,12 +47,31 @@ class Petugas_Medis extends BaseController
         }
     }
 
-    public function ubah()
+    public function ubah($id)
     {
-        return view('petugas_medis/ubah');
+        $data = [
+            'petugas' => $this->petugas_medis->select('petugas_medis.*,poli.nama_poli')
+                ->join('poli', 'poli.id = petugas_medis.poli_id', 'LEFT')->find($id),
+            'polis' => $this->poli->findAll()
+        ];
+        return view('petugas_medis/ubah', $data);
+    }
+    public function update($id)
+    {
+        $data = [
+            'id' => $id,
+            'poli_id' => $this->request->getPost('poli_id'),
+            'jabatan' => $this->request->getPost('jabatan'),
+            'nama' => $this->request->getPost('nama'),
+            'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'no_hp' => $this->request->getPost('no_hp'),
+            'alamat' => $this->request->getPost('alamat'),
+        ];
+        $this->petugas_medis->save($data);
+        return redirect()->to('/petugas_medis');
     }
 
-    public function hapus($id)
+    public function hapus($id = null)
     {
         $this->petugas_medis->delete($id);
         return redirect()->to('petugas_medis');

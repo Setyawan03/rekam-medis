@@ -26,6 +26,9 @@
   <link rel="stylesheet" href="<?= base_url() ?>/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="<?= base_url() ?>/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="<?= base_url() ?>/plugins/select2-4.1/css/select2.min.css">
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -356,15 +359,15 @@
                       </a>
                   </li>
                 <?php endif ?>
-                <li class="nav-item">
-                  <a href="<?= base_url('logout') ?>" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>
-                      Logout
-                    </p>
-                  </a>
-                </li>
                 </ul>
+              <li class="nav-item">
+                <a href="<?= base_url('logout') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Logout
+                  </p>
+                </a>
+              </li>
         </nav>
         <!-- /.sidebar-menu -->
       </div>
@@ -457,10 +460,22 @@
   <script src="<?= base_url() ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url() ?>/dist/js/adminlte.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="<?= base_url() ?>/plugins/select2-4.1/js/select2.min.js"></script>
+
   <!-- AdminLTE for demo purposes -->
   <!-- <script src="dist/js/demo.js"></script> -->
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <!-- <script src="dist/js/pages/dashboard.js"></script> -->
+
+  <script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+      $('#pasien_id').select2({
+        placeholder: "select a Pasien"
+      })
+    });
+  </script>
 </body>
 
 </html>

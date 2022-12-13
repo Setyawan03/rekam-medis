@@ -43,8 +43,10 @@ $routes->group('pasien', static function ($routes) {
     $routes->get('', 'Admin\Pasien::index');
     $routes->get('add', 'Admin\Pasien::tambah');
     $routes->post('add', 'Admin\Pasien::tambah');
-    $routes->get('edit', 'Admin\Pasien::ubah');
     $routes->get('deleted/(:any)', 'Admin\Pasien::hapus/$1');
+    // edit
+    $routes->get('edit/(:any)', 'Admin\Pasien::ubah/$1');
+    $routes->post('update/(:any)', 'Admin\Pasien::update/$1');
 });
 $routes->group('petugas_medis', static function ($routes) {
     $routes->get('', 'Admin\Petugas_Medis::index');
@@ -52,6 +54,9 @@ $routes->group('petugas_medis', static function ($routes) {
     $routes->post('add', 'Admin\Petugas_Medis::tambah');
     $routes->get('edit', 'Admin\Petugas_Medis::ubah');
     $routes->get('deleted/(:any)', 'Admin\Petugas_Medis::hapus/$1');
+    // edit
+    $routes->get('edit/(:any)', 'Admin\Petugas_Medis::ubah/$1');
+    $routes->post('update/(:any)', 'Admin\Petugas_Medis::update/$1');
 });
 $routes->group('poli', static function ($routes) {
     $routes->get('', 'Admin\Poli::index');
@@ -59,6 +64,9 @@ $routes->group('poli', static function ($routes) {
     $routes->post('add', 'Admin\Poli::tambah');
     $routes->get('edit', 'Admin\Poli::ubah');
     $routes->get('deleted/(:any)', 'Admin\Poli::hapus/$1');
+    // edit
+    $routes->get('edit/(:any)', 'Admin\Poli::ubah/$1');
+    $routes->post('update/(:any)', 'Admin\Poli::update/$1');
 });
 $routes->group('poli', static function ($routes) {
     $routes->get('', 'Admin\Rekam_Medis::index');
@@ -66,6 +74,9 @@ $routes->group('poli', static function ($routes) {
     $routes->post('add', 'Admin\Rekam_Medis::tambah');
     $routes->get('edit', 'Admin\Rekam_Medis::ubah');
     $routes->get('deleted/(:any)', 'Admin\Rekam_Medis::hapus/$1');
+    // edit
+    $routes->get('edit/(:any)', 'Admin\Rekam_Medis::ubah/$1');
+    $routes->post('update/(:any)', 'Admin\Rekam_Medis::update/$1');
 });
 $routes->group('diagnosa', static function ($routes) {
     $routes->get('', 'Dokter\Rekam_Medis::index');
@@ -73,6 +84,9 @@ $routes->group('diagnosa', static function ($routes) {
     $routes->post('add', 'Dokter\Rekam_Medis::tambah');
     $routes->get('edit', 'Dokter\Rekam_Medis::ubah');
     $routes->get('deleted/(:any)', 'Dokter\Rekam_Medis::hapus/$1');
+    // edit
+    $routes->get('edit/(:any)', 'Dokter\Rekam_Medis::ubah/$1');
+    $routes->post('update/(:any)', 'Dokter\Rekam_Medis::update/$1');
 });
 $routes->group('rekammedis', static function ($routes) {
     $routes->get('', 'Petugas\Rekam_Medis::index');
@@ -80,6 +94,9 @@ $routes->group('rekammedis', static function ($routes) {
     $routes->post('add', 'Petugas\Rekam_Medis::tambah');
     $routes->get('edit', 'Petugas\Rekam_Medis::ubah');
     $routes->get('deleted/(:any)', 'Petugas\Rekam_Medis::hapus/$1');
+    // edit
+    $routes->get('edit/(:any)', 'Petugas\Rekam_Medis::ubah/$1');
+    $routes->post('update/(:any)', 'Petugas\Rekam_Medis::update/$1');
 });
 
 

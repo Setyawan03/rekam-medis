@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 10:30 AM
+-- Generation Time: Dec 11, 2022 at 11:13 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `pasien` (
   `id` int(11) NOT NULL,
-  `no_pasien` varchar(45) DEFAULT NULL,
+  `no_pasien` int(45) DEFAULT NULL,
   `nama_pasien` varchar(45) DEFAULT NULL,
   `jenis_kelamin` enum('perempuan','laki-laki') DEFAULT NULL,
   `alamat` text DEFAULT NULL,
@@ -43,7 +43,12 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`id`, `no_pasien`, `nama_pasien`, `jenis_kelamin`, `alamat`, `tmpt_lahir`, `tgl_lahir`, `no_hp`) VALUES
-(1, NULL, 'indra', NULL, '-', 'goa', '2022-11-29', 2147483647);
+(6, 1234567, 'febrian', 'laki-laki', 'abe', 'qwrtyu', '2022-12-10', 9876532),
+(7, 123456789, 'fadil', 'laki-laki', 'qwertyuio', 'nuyuk', '2022-12-24', 987653),
+(8, NULL, 'indra', 'laki-laki', 'dok', 'dok2', '2022-12-07', 2147483647),
+(11, 802, 'bertus', 'laki-laki', 'mana-mana aja', 'dok2', '2022-12-17', 2147483647),
+(12, 3333, 'avif', 'laki-laki', 'polimak', 'polimak', '2022-12-08', 987653),
+(13, 4444, 'cici', 'perempuan', 'abe', 'Biak', '2022-12-07', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -67,8 +72,9 @@ CREATE TABLE `petugas_medis` (
 --
 
 INSERT INTO `petugas_medis` (`id`, `user_id`, `poli_id`, `jabatan`, `nama`, `jenis_kelamin`, `alamat`, `no_hp`) VALUES
-(1, 1, 1, 'Perawat', 'avif', NULL, 'polimak', 12345678),
-(4, 7, 2, 'Perawat', 'edi', 'Laki-Laki', '-', 2147483647);
+(4, 7, 2, 'Admin', 'edi', 'Laki-Laki', 'oooo', 2147483647),
+(5, 8, 1, 'Dokter', 'Meylisa', 'Perempuan', '-', 2147483647),
+(6, 9, 1, 'Admin', 'avif', 'Laki-Laki', '-', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -86,8 +92,9 @@ CREATE TABLE `poli` (
 --
 
 INSERT INTO `poli` (`id`, `nama_poli`) VALUES
-(1, 'poli umum'),
-(2, 'Poli gigi');
+(1, 'Poli umum'),
+(2, 'Poli gigi'),
+(5, 'Poli Anak');
 
 -- --------------------------------------------------------
 
@@ -100,11 +107,22 @@ CREATE TABLE `rekam_medis` (
   `pasien_id` int(11) NOT NULL,
   `poli_id` int(11) NOT NULL,
   `tanggal` date DEFAULT NULL,
+  `nama` varchar(50) NOT NULL,
   `keluhan` text DEFAULT NULL,
+  `alamat` int(50) NOT NULL,
   `diagnosa` text DEFAULT NULL,
   `resep` text DEFAULT NULL,
-  `dokter_id` int(11) NOT NULL
+  `nama_dokter` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `rekam_medis`
+--
+
+INSERT INTO `rekam_medis` (`id`, `pasien_id`, `poli_id`, `tanggal`, `nama`, `keluhan`, `alamat`, `diagnosa`, `resep`, `nama_dokter`) VALUES
+(9, 7, 2, NULL, '', 'qqqq', 0, 'qqq', 'qqq', ''),
+(10, 6, 1, NULL, '', 'sakit hati', 0, 'diputuskan', 'cari baru', 'kamu'),
+(11, 8, 2, NULL, '', 'mati', 0, 'neraka', 'trada', 'dr.indra');
 
 -- --------------------------------------------------------
 
@@ -124,8 +142,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
-(1, 'avif', '827ccb0eea8a706c4c34a16891f84e7b', 'Admin'),
-(7, 'edi', '202cb962ac59075b964b07152d234b70', 'Perawat');
+(7, 'edi', '202cb962ac59075b964b07152d234b70', 'Perawat'),
+(8, 'meylisa', '250cf8b51c773f3f8dc8b4be867a9a02', 'Dokter'),
+(9, 'avif', '698d51a19d8a121ce581499d7b701668', 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -173,31 +192,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `petugas_medis`
 --
 ALTER TABLE `petugas_medis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `poli`
 --
 ALTER TABLE `poli`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `rekam_medis`
 --
 ALTER TABLE `rekam_medis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
