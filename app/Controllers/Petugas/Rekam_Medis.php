@@ -39,10 +39,13 @@ class Rekam_Medis extends BaseController
 
     public function ubah($id)
     {
-        $data = [
-            'rekammedis' => $this->rekam_medis->find($id)
-        ];
-        return view('rekammedis/ubah', $data);
+
+        $polis = $this->poli->findAll();
+        $pasiens = $this->pasien->findAll();
+        $data = $this->rekam_medis->find($id);
+        $pasien = $this->pasien->find($data['pasien_id']);
+        //dd($pasien);
+        return view('rekammedis/ubah', compact(['data', 'polis', 'pasiens', 'pasien']));
     }
     public function update($id)
     {
@@ -60,7 +63,7 @@ class Rekam_Medis extends BaseController
             'nama_dokter' => $this->request->getPost('nama_dokter'),
         ];
         $this->rekam_medis->save($data);
-        return redirect()->to('/rekammedis');
+        return redirect()->to('rekammedis');
     }
 
     public function hapus($id)

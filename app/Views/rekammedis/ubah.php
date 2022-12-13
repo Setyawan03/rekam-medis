@@ -6,19 +6,14 @@
         <h3>Ubah Rekam</h3>
     </div>
     <div class="card-body">
-        <form action="<?= base_url() ?>/rekammedis/update/<?= $rekammedis['id']; ?>" method="POST">
+        <form action="<?= base_url() ?>/rekammedis/update/<?= $data['id']; ?>" method="POST">
             <div class="form-group">
-                <label for="">Nama Pasien</label>
-                <select name="pasien_id" class="form-control">
-                    <option value=""></option>
-                    <?php foreach ($pasiens as $key => $pasien) : ?>
-                        <option value="<?= $pasien['id'] ?>"><?= $pasien['nama_pasien'] ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <label for="">Nama Pasin</label>
+                <input type="text" name="alamat" value="<?= $pasien['nama_pasien'] ?>" class="form-control" placeholder="Input Alamat">
             </div>
             <div class="form-group">
                 <label for="">Alamat</label>
-                <input type="text" name="alamat" class="form-control" placeholder="Input Alamat">
+                <input type="text" name="alamat" value="<?= $pasien['alamat'] ?>" class="form-control" placeholder="Input Alamat">
             </div>
             <div class="form-group">
                 <label for="">Poli</label>

@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label for="">Alamat</label>
-                <input type="text" name="alamat" class="form-control" placeholder="Input Alamat">
+                <input type="text" name="alamat" value="<?= $pasien['alamat'] ?>" class="form-control" placeholder="Input Alamat">
             </div>
             <div class="form-group">
                 <label for="">Poli</label>
