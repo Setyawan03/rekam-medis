@@ -17,8 +17,12 @@ class Rekam_Medis extends BaseController
     }
     public function index()
     {
-        $data['rekammedis'] = $this->rekam_medis->findAll();
-        return view('rekammedis/index', $data);
+        if (session()->get('nama') !== NULL) {
+            $data = ['rekammedis' => $this->rekam_medis->getRekammedis()];
+            return view('rekammedis/index', $data);
+        } else {
+            return view('login');
+        }
     }
 
 

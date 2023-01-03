@@ -18,8 +18,12 @@ class Rekam_Medis extends BaseController
     }
     public function index()
     {
-        $data['rekammedis'] = $this->rekam_medis->findAll();
-        return view('rekammedis/index', $data);
+        if (session()->get('nama') !== NULL) {
+            $data = ['rekammedis' => $this->rekam_medis->getRekammedis()];
+            return view('rekammedis/index', $data);
+        } else {
+            return view('login');
+        }
     }
 
 
@@ -39,30 +43,26 @@ class Rekam_Medis extends BaseController
 
     public function ubah($id)
     {
-
         $polis = $this->poli->findAll();
         $pasiens = $this->pasien->findAll();
-        $data = $this->rekam_medis->find($id);
-        $pasien = $this->pasien->find($data['pasien_id']);
-        //dd($pasien);
-        return view('rekammedis/ubah', compact(['data', 'polis', 'pasiens', 'pasien']));
+        $data = $this->rekam_medis->getRekammedisById($id);
+        return view('rekammedis/ubah', compact(['data', 'polis', 'pasiens']));
     }
     public function update($id)
     {
         $data = [
             'id' => $id,
-            'pasien_id' => $this->request->getPost('pasien_id'),
+            'pasien_id' => $this->request->getPost('pasien'),
             'poli_id' => $this->request->getPost('poli_id'),
-            'nama' => $this->request->getPost('nama'),
             'tanggal' => $this->request->getPost('tanggal'),
             'keluhan' => $this->request->getPost('keluhan'),
-            'no_hp' => $this->request->getPost('no_hp'),
             'diagnosa' => $this->request->getPost('diagnosa'),
             'resep' => $this->request->getPost('resep'),
             'alamat' => $this->request->getPost('alamat'),
             'nama_dokter' => $this->request->getPost('nama_dokter'),
         ];
-        $this->rekam_medis->save($data);
+        $this->rekam_medis->updateData($id, $data);
+
         return redirect()->to('rekammedis');
     }
 

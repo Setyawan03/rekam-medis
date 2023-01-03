@@ -10,9 +10,8 @@
             <thead>
                 <tr align="middle">
                     <th>No</th>
-                    <th>Id Pasien</th>
-                    <th>Id Poli</th>
                     <th>Nama Pasien</th>
+                    <th>Nama Poli</th>
                     <th>Alamat</th>
                     <th>Tanggal Berobat</th>
                     <th>Keluhan</th>
@@ -26,12 +25,11 @@
                 <?php foreach ($rekammedis as $index => $rekammedis) : ?>
                     <tr>
                         <td><?= $index + 1 ?></td>
-                        <td><?= $rekammedis['pasien_id'] ?></td>
-                        <td><?= $rekammedis['poli_id'] ?></td>
-                        <td><?= $rekammedis['nama'] ?></td>
+                        <td><?= $rekammedis['nama_pasien'] ?></td>
+                        <td><?= $rekammedis['nama_poli'] ?></td>
+                        <td><?= $rekammedis['alamat'] ?></td>
                         <td><?= $rekammedis['tanggal'] ?></td>
                         <td><?= $rekammedis['keluhan'] ?></td>
-                        <td><?= $rekammedis['alamat'] ?></td>
                         <td><?= $rekammedis['diagnosa'] ?></td>
                         <td><?= $rekammedis['resep'] ?></td>
                         <td><?= $rekammedis['nama_dokter'] ?></td>

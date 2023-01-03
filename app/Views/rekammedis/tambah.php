@@ -37,18 +37,7 @@
                 <label for="">Keluhan</label>
                 <textarea name="keluhan" rows="5" class="form-control"></textarea>
             </div>
-            <div class="form-group">
-                <label for="">Diagnosa</label>
-                <textarea name="diagnosa" rows="5" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="">Resep Obat</label>
-                <textarea name="resep" rows="5" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="">Nama Dokter</label>
-                <input type="text" name="nama_dokter" class="form-control" placeholder="Input Nama Dokter">
-            </div>
+
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Simpan">
             </div>

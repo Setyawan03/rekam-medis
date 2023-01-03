@@ -9,7 +9,7 @@
         <form action="<?= base_url() ?>/pasien/update/<?= $pasiens['id']; ?>" method="POST">
             <div class="form-group">
                 <label for="">Nomor Kartu Pasien</label>
-                <input value="<?= $pasiens['no_pasien']; ?>" type="text" name="no_pasien" class="form-control" disabled placeholder="Input Nomor Kartu Pasien">
+                <input value="<?= $pasiens['no_pasien']; ?>" type="text" name="no_pasien" class="form-control" placeholder="Input Nomor Kartu Pasien">
             </div>
             <div class="form-group">
                 <label for="">Nama Pasien</label>

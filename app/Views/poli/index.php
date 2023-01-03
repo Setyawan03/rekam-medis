@@ -17,9 +17,9 @@
             <tbody>
                 <?php foreach ($polis as $index => $poli) : ?>
                     <tr>
-                        <td><?= $index + 1 ?></td>
+                        <td align="middle"><?= $index + 1 ?></td>
                         <td><?= $poli['nama_poli'] ?></td>
-                        <td>
+                        <td align="middle">
                             <a href="<?= base_url('poli/deleted') . "/" . $poli['id'] ?>"><i class="fas fa-trash"></i></a>
                             <a href="<?= base_url('poli/edit') . "/" . $poli['id'] ?>"><i class="fas fa-edit"></i></a>
                         </td>

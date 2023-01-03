@@ -16,12 +16,16 @@ class Petugas_Medis extends BaseController
     }
     public function index()
     {
-        $data['petugas_medis'] = $this->petugas_medis
-            ->select("petugas_medis.*, poli.nama_poli, user.username, user.role")
-            ->join('poli', 'poli.id = petugas_medis.poli_id', 'LEFT')
-            ->join('user', 'user.id = petugas_medis.user_id', 'LEFT')
-            ->findAll();
-        return view('petugas_medis/index', $data);
+        if (session()->get('nama') !== NULL) {
+            $data['petugas_medis'] = $this->petugas_medis
+                ->select("petugas_medis.*, poli.nama_poli, user.username, user.role")
+                ->join('poli', 'poli.id = petugas_medis.poli_id', 'LEFT')
+                ->join('user', 'user.id = petugas_medis.user_id', 'LEFT')
+                ->findAll();
+            return view('petugas_medis/index', $data);
+        } else {
+            return view('login');
+        }
     }
 
 

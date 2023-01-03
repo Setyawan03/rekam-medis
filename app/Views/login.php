@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="<?= base_url() ?>/dist/css/adminlte.min.css">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url('/klinik.jpg'); ">
+
   <div class="login-box">
     <div class="login-logo">
       <a href="#"><b>SISTEM INFORMASI<br>REKAM MEDIS</b></a>
@@ -28,7 +29,7 @@
 
         <form action="<?= base_url('login') ?>" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="username" placeholder="Username" required>
+            <input type="text" class="form-control " name="username" placeholder="Username" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>

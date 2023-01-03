@@ -29,7 +29,7 @@
                         <td><?= $pasien['alamat'] ?></td>
                         <td><?= $pasien['tmpt_lahir'] . ', ' . $pasien['tgl_lahir'] ?></td>
                         <td><?= $pasien['no_hp'] ?></td>
-                        <td>
+                        <td align="middle">
                             <a href="<?= base_url('pasien/deleted') . "/" . $pasien['id'] ?>"><i class="fas fa-trash"></i></a>
                             <a href="<?= base_url('pasien/edit') . "/" . $pasien['id'] ?>"><i class="fas fa-edit"></i></a>
                         </td>
